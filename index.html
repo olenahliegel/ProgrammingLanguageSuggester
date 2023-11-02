@@ -8,7 +8,30 @@
 </head>
 
 <body>
-
+  <h1>Programming Language Suggester</h1>
+  <form id="developmentFocus">
+    <label>
+      <input type="radio" name="developmentFocus" value="frontEnd">
+      Front-End
+    </label>
+    <label>
+      <input type="radio" name="developmentFocus" value="backEnd">
+      Back-End
+    </label>
+    <label>
+      <input type="radio" name="developmentFocus" value="fullstack">
+      I like both equally
+    </label>
+  </form>
+  <div id="frontEnd" class="hidden">
+    <p>This is div for displaying questions for FrontEnd developers</p>
+  </div>
+  <div id="backEnd" class="hidden">
+    <p>This is div for displaying questions for Backends developers</p>
+  </div>
+  <div id="fullstack" class="hidden">
+    <p>This is div for displaying questions for Fullstack developers</p>
+  </div>
 </body>
 
 </html>
