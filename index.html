@@ -82,8 +82,8 @@
         <label for="frontEndInput">Please type in your answer</label>
         <input id="frontEndInput" type="text" name="frontEndInput">
       </div>
-      <button type="submit">Get Suggestion</button>
-      <button type="button">Reset</button>
+      <button id="submit" type="submit" disabled>Get Suggestion</button>
+      <button id="reset" type="button" class="hidden">Reset answers</button>
     </form>
   </div>
   <div id="backEnd" class="hidden">
@@ -92,9 +92,9 @@
   <div id="fullstack" class="hidden">
     <p>This is div for displaying questions for Fullstack developers</p>
   </div>
-  <div id="result">
+  <div id="result" class="hidden">
     <h3>Based on your responses:</h3>
-    <ul class="hidden">
+    <ul>
       <li>Your current experience level with coding and web development is <span id="experience">_____________</span>
       </li>
       <li>You envision working on <span id="envision">_____________</span> types of projects.</li>
@@ -109,6 +109,9 @@
       This language aligns with your interests and experience level, making it a great choice to kickstart your web
       development journey. Best of luck on your learning path!"
     </p>
+  </div>
+  <div id="error" class="hidden">
+    <h3></h3>
   </div>
 </body>
 

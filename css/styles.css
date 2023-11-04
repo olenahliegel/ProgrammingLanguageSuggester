@@ -5,3 +5,7 @@
 span {
   color: red;
 }
+
+.disable {
+  cursor: not-allowed;
+}
