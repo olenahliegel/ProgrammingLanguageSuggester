@@ -82,12 +82,71 @@
         <label for="frontEndInput">Please type in your answer</label>
         <input id="frontEndInput" type="text" name="frontEndInput">
       </div>
-      <button id="submit" type="submit" disabled>Get Suggestion</button>
-      <button id="reset" type="button" class="hidden">Reset answers</button>
+      <button id="frontSubmit" type="submit" disabled>Get Suggestion</button>
+      <button id="frontReset" type="button" class="hidden">Reset answers</button>
     </form>
   </div>
   <div id="backEnd" class="hidden">
-    <p>This is div for displaying questions for Backends developers</p>
+    <form id="backEndFocus">
+      <div>
+        <h2>Which backend programming language are you most familiar with or have experience in?</h2>
+        <label>
+          <input type="radio" name="backEndExperience" value="backEndBeginner" checked>
+          Complete beginner
+        </label></br>
+        <label>
+          <input type="radio" name="backEndExperience" value="pascal">
+          I remember Pascal
+        </label></br>
+        <label>
+          <input type="radio" name="backEndExperience" value="cPlusPlus">
+          I saw C++
+        </label></br>
+        <label>
+          <input type="radio" name="backEndExperience" value="assembler">
+          Only Assembler, only hardcore
+        </label></br>
+      </div>
+      <div>
+        <h2>What types of systems and projects would you prefer to work on in your backend development?</h2>
+        <select id="projectTypes">
+          <option value="unsure">I am not sure</option>
+          <option value="enterpriseApps">Enterprise-level applications</option>
+          <option value="webApps">Web applications and microservices</option>
+          <option value="machineLearning">Machine learning and data analysis projects</option>
+        </select>
+      </div>
+      <div>
+        <h2>Are you excited about the endless possibilities of microservices architecture?</h2>
+        <select id="microServ">
+          <option value="pieces">Absolutely! I want to break down my app into bite-sized pieces</option>
+          <option value="monolithic">I prefer the monolithic approach; one big piece of cake, please</option>
+          <option value="confused">I'm micro-confused; help me understand this tasty concept</option>
+        </select>
+      </div>
+      <div>
+        <h2>Do you dream of handling server-side logic and databases?</h2>
+        <label>
+          <input type="radio" name="backEndInterests" value="dataDeep" checked>
+          Oh yes, I can't wait to dive into the data deep end
+        </label></br>
+        <label>
+          <input type="radio" name="backEndInterests" value="frontWeb">
+          No thanks, I'd rather stay on the front porch of the web
+        </label></br>
+        <label>
+          <input type="radio" name="backEndInterests" value="banter">
+          I'm not sure, I'm just here for the backend banter!
+        </label></br>
+        <div>
+          <h2>What types of projects do you envision for yourself in the future?</h2>
+          <label for="backEndInput">Please type in your answer</label>
+          <input id="backEndInput" type="text" name="backEndInput">
+        </div>
+        <button id="backSubmit" type="submit" disabled>Get Suggestion</button>
+        <button id="backReset" type="button" class="hidden">Reset answers</button>
+      </div>
+    </form>
   </div>
   <div id="fullstack" class="hidden">
     <p>This is div for displaying questions for Fullstack developers</p>
@@ -95,13 +154,12 @@
   <div id="result" class="hidden">
     <h3>Based on your responses:</h3>
     <ul>
-      <li>Your current experience level with coding and web development is <span id="experience">_____________</span>
-      </li>
+      <li id="experience"></li>
       <li>You envision working on <span id="envision">_____________</span> types of projects.</li>
       <li>You are <span id="spa">________________</span> interested in building modern, single-page applications (SPAs).
       </li>
       <li>The aspect of web development that interests you the most is <span id="aspect">________________</span>.</li>
-      <li>When it comes to programming languages, you prefer <span id="prefering">________________</span>.</li>
+      <li>When it comes to programming languages, you prefer <span id="preferring">________________</span>.</li>
     </ul>
     <p>
       Considering your preferences and goals, we recommend you start learning <span id="language"

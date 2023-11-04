@@ -1,5 +1,4 @@
 //Business logic
-
 function recommendFrontendLanguage(currentExp, projectEnvision, spaSelection, frontEndInterests) {
   if (currentExp === "frontEndTS") {
     return "Angular";
@@ -28,8 +27,67 @@ function recommendFrontendLanguage(currentExp, projectEnvision, spaSelection, fr
   } else return "Java Script";
 }
 
-//User Interface logic
+function recommendationBackEndLanguage(currentExp, projectTypes, microServices, backEndInterests) {
+  let result = 0;
 
+  if (currentExp === "assembler")
+    result += 3;
+  else if (currentExp === "cPlusPlus")
+    result += 2;
+  else if (currentExp === "pascal")
+    result += 1;
+  else
+    result += 0;
+
+  if (projectTypes === "enterpriseApps")
+    result += 3;
+  else if (projectTypes === "webApps")
+    result += 2;
+  else if (projectTypes === "machineLearning")
+    result += 1;
+  else
+    result += 0;
+
+  if (microServices === "monolithic")
+    result += 3;
+  else if (microServices === "pieces")
+    result += 2;
+  else if (microServices === "confused")
+    result += 1;
+  else
+    result += 0;
+
+  if (backEndInterests === "banter")
+    result += 3;
+  else if (backEndInterests === "dataDeep")
+    result += 2;
+  else if (backEndInterests === "frontWeb")
+    result += 1;
+  else
+    result += 0;
+
+  if (result <= 4)
+    return "Python";
+  else if (result >= 5 && result < 8)
+    return "C#";
+  else (result >= 8)
+  return "Java";
+}
+
+function outputForFirstAnswerResult(answer) {
+  const frontEndOutput = "Your current experience level with coding and web development is: "
+  if (answer === "frontEndBeginner") {
+    return frontEndOutput + "complete beginner";
+  } else if (answer === "frontEndHTML") {
+    return frontEndOutput + "some experience with HTML & CSS";
+  } else if (answer === "frontEndJS") {
+    return frontEndOutput + "experience with Java Script";
+  } else if (answer === "frontEndTS") {
+    return frontEndOutput + "experience with Type Script";
+  }
+}
+
+//User Interface logic
 function handleUserChoice() {
   const userChoice = document.querySelector("input[name='developmentFocus']:checked").value;
   if (userChoice) {
@@ -49,7 +107,7 @@ function handleUserChoice() {
   }
 }
 
-
+//FrontEnd questionary forms
 function handleFrontEndAnswers(event) {
   event.preventDefault();
 
@@ -59,29 +117,33 @@ function handleFrontEndAnswers(event) {
   const frontEndInterests = document.querySelector("input[name='frontEndInterests']:checked").value;
   const languagePreference = document.querySelector("input#frontEndInput").value;
 
-
   if (currentExp && projectEnvision && spaSelection && frontEndInterests && languagePreference) {
     document.querySelector("div#error").setAttribute("class", "hidden");
     document.querySelector("div#result").removeAttribute("class");
-    let result = recommendFrontendLanguage(currentExp, projectEnvision, spaSelection, frontEndInterests);
-    document.querySelector("span#language").innerText = result;
+
+    let languageRecommendationResult = recommendFrontendLanguage(currentExp, projectEnvision, spaSelection, frontEndInterests);
+    document.querySelector("span#language").innerText = languageRecommendationResult;
+    //document.querySelector("li#experience").innerText = outputForFirstAnswerResult(currentExp);
+    //document.querySelector("span#aspect").innerText = frontEndInterests;
+    //document.querySelector("span#spa").innerText = spaSelection;
+    //document.querySelector("span#envision").innerText = projectEnvision;
+    //document.querySelector("span#preferring").innerText = languagePreference;
   }
   else {
     document.querySelector("div#error").removeAttribute("class");
     document.querySelector("div#result").setAttribute("class", "hidden");
     document.querySelector("div#error h3").textContent = "Please answer all questions";
   }
-  document.getElementById("reset").removeAttribute("class");
+  document.getElementById("frontReset").removeAttribute("class");
 }
 
-function updateSubmitButtonStatus() {
+function updateFrontSubmitButtonStatus() {
   const currentExp = document.querySelector("input[name='frontEndExperience']:checked").value;
   const projectEnvision = document.getElementById("frontEndProjects").value;
   const spaSelection = document.getElementById("frontEndSPA").value;
   const frontEndInterests = document.querySelector("input[name='frontEndInterests']:checked").value;
   const languagePreference = document.querySelector("input#frontEndInput").value;
-
-  const submitButton = document.getElementById("submit");
+  const submitButton = document.getElementById("frontSubmit");
 
   if (currentExp && projectEnvision && spaSelection && frontEndInterests && languagePreference) {
     submitButton.removeAttribute("disabled");
@@ -90,27 +152,101 @@ function updateSubmitButtonStatus() {
   }
 }
 
+function resetFrontForm() {
+  document.getElementById("frontSubmit").setAttribute("disabled", "true");
+  document.querySelector("input[name='frontEndExperience'][value='frontEndBeginner']").checked = true;
+  document.getElementById("frontEndProjects").value = "unknown";
+  document.getElementById("frontEndSPA").value = "unknownSPA"
+  document.querySelector("input[name='frontEndInterests'][value='styling']").checked = true;
+  document.querySelector("input#frontEndInput").value = "";
+  document.querySelector("div#result").setAttribute("class", "hidden");
+  document.querySelector("div#error").setAttribute("class", "hidden");
+}
 
+
+//BackEnd questionary form
+function handleBackEndAnswers(event) {
+  event.preventDefault();
+
+  const currentExp = document.querySelector("input[name='backEndExperience']:checked").value;
+  const projectTypes = document.getElementById("projectTypes").value;
+  const microServices = document.getElementById("microServ").value;
+  const backEndInterests = document.querySelector("input[name='backEndInterests']:checked").value;
+  const backEndInput = document.querySelector("input#backEndInput").value;
+
+  if (currentExp && projectTypes && microServices && backEndInterests && backEndInput) {
+    document.querySelector("div#error").setAttribute("class", "hidden");
+    document.querySelector("div#result").removeAttribute("class");
+    let languageRecommendationResult = recommendationBackEndLanguage(currentExp, projectTypes, microServices, backEndInterests);
+    document.querySelector("span#language").innerText = languageRecommendationResult;
+    //document.querySelector("li#experience").innerText = outputForFirstAnswerResult(currentExp);
+    //document.querySelector("span#aspect").innerText = frontEndInterests;
+    //document.querySelector("span#spa").innerText = spaSelection;
+    //document.querySelector("span#envision").innerText = projectEnvision;
+    //document.querySelector("span#preferring").innerText = languagePreference;
+
+  } else {
+    document.querySelector("div#error").removeAttribute("class");
+    document.querySelector("div#result").setAttribute("class", "hidden");
+    document.querySelector("div#error h3").textContent = "Please answer all questions";
+  }
+  document.getElementById("backReset").removeAttribute("class");
+}
+
+
+function updateBackSubmitButtonStatus() {
+  const currentExp = document.querySelector("input[name='backEndExperience']:checked").value;
+  const projectTypes = document.getElementById("projectTypes").value;
+  const microServices = document.getElementById("microServ").value;
+  const backEndInterests = document.querySelector("input[name='backEndInterests']:checked").value;
+  const backEndInput = document.querySelector("input#backEndInput").value;
+  const submitButton = document.getElementById("backSubmit");
+
+  if (currentExp && projectTypes && microServices && backEndInterests && backEndInput) {
+    submitButton.removeAttribute("disabled");
+  } else {
+    submitButton.setAttribute("disabled", "true");
+  }
+}
+
+function resetBackForm() {
+  document.getElementById("backSubmit").setAttribute("disabled", "true");
+  document.querySelector("input[name='backEndExperience'][value='backEndBeginner']").checked = true;
+  document.getElementById("projectTypes").value = "unsure";
+  document.getElementById("microServ").value = "pieces"
+  document.querySelector("input[name='backEndInterests'][value='dataDeep']").checked = true;
+  document.querySelector("input#backEndInput").value = "";
+  document.querySelector("div#result").setAttribute("class", "hidden");
+  document.querySelector("div#error").setAttribute("class", "hidden");
+}
 
 window.addEventListener("load", function () {
   const developmentFocusForm = document.getElementById("developmentFocus");
   developmentFocusForm.addEventListener("click", handleUserChoice);
 
+  developmentFocusForm.addEventListener("click", function () {
+    resetFrontForm();
+    resetBackForm();
+    document.getElementById("frontReset").setAttribute("class", "hidden");
+    document.getElementById("backReset").setAttribute("class", "hidden");
+  });
+
   const frontEndInput = document.getElementById("frontEndInput");
-  frontEndInput.addEventListener("input", updateSubmitButtonStatus);
+  frontEndInput.addEventListener("input", updateFrontSubmitButtonStatus);
 
   const frontEndFocusForm = document.getElementById("frontEndFocus");
   frontEndFocusForm.addEventListener("submit", handleFrontEndAnswers);
 
-  const reset = document.getElementById("reset");
-  reset.addEventListener("click", function () {
-    document.getElementById("submit").setAttribute("disabled", "true");
-    document.querySelector("input[name='frontEndExperience'][value='frontEndBeginner']").checked = true;
-    document.getElementById("frontEndProjects").value = "unknown";
-    document.getElementById("frontEndSPA").value = "unknownSPA"
-    document.querySelector("input[name='frontEndInterests'][value='styling']").checked = true;
-    document.querySelector("input#frontEndInput").value = "";
-  });
+  const frontReset = document.getElementById("frontReset");
+  frontReset.addEventListener("click", resetFrontForm);
 
+  const backEndInput = document.getElementById("backEndInput");
+  backEndInput.addEventListener("input", updateBackSubmitButtonStatus);
+
+  const backEndFocusForm = document.getElementById("backEndFocus");
+  backEndFocusForm.addEventListener("submit", handleBackEndAnswers);
+
+  const backReset = document.getElementById("backReset");
+  backReset.addEventListener("click", resetBackForm);
 });
 
