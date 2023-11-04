@@ -20,7 +20,58 @@ function handleUserChoice() {
     }
   }
 }
+function handleFrontEndAnswers(event) {
+  event.preventDefault();
+  const currentExp = document.querySelector("input[name='frontEndExperience']:checked").value;
+  console.log(currentExp);
+  const projectEnvision = document.getElementById("frontEndProjects").value;
+  console.log(projectEnvision);
+  const spaSelection = document.getElementById("frontEndSPA").value;
+  console.log(spaSelection);
+  const frontEndInterests = document.querySelector("input[name='frontEndInterests']:checked").value;
+  console.log(frontEndInterests);
+  const languagePreference = document.querySelector("input#frontEndInput").value;
+  console.log(languagePreference);
+
+  let result;
+  if (currentExp && spaSelection) {
+    if (currentExp === "frontEndTS") {
+      result = "Angular";
+    } else if (currentExp === "frontEndJS" &&
+      (projectEnvision === "interactiveWeb" ||
+        projectEnvision === "enterpriseLevel" ||
+        spaSelection === "buildSPA")) {
+      result = "Angular";
+    } else if (currentExp === "frontEndJS") {
+      result = "TypeScript";
+    } else if ((currentExp === "frontEndHTML") && (frontEndInterests === "stronglyTyped")) {
+      result = "TypeScript";
+    } else if (currentExp === "frontEndHTML" &&
+      (projectEnvision === "unknown" ||
+        spaSelection === "unknownSPA")) {
+      result = "HTML & CSS";
+    } else if (currentExp === "frontEndHTML") {
+      result = "Java Script";
+    } else if (currentExp === "frontEndBeginner" &&
+      (projectEnvision === "interactiveWeb" ||
+        spaSelection === "buildSPA" ||
+        frontEndInterests === "scripting")) {
+      result = "Java Script";
+    } else if (currentExp === "frontEndBeginner") {
+      result = "HTML&CSS";
+    } else result = "Java Script";
+  } else {
+    result = "ERROR";
+  }
+  document.querySelector("span#language").innerText = result;
+}
+
 window.addEventListener("load", function () {
   const developmentFocusForm = document.getElementById("developmentFocus");
   developmentFocusForm.addEventListener("click", handleUserChoice);
+});
+
+window.addEventListener("load", function () {
+  const developmentFocusForm = document.getElementById("frontEndFocus");
+  developmentFocusForm.addEventListener("submit", handleFrontEndAnswers);
 });

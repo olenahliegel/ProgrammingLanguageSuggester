@@ -19,18 +19,96 @@
       Back-End
     </label>
     <label>
-      <input type="radio" name="developmentFocus" value="fullstack">
+      <input type="radio" name="developmentFocus" value="fullstack" checked>
       I like both equally
     </label>
   </form>
   <div id="frontEnd" class="hidden">
-    <p>This is div for displaying questions for FrontEnd developers</p>
+    <form id="frontEndFocus">
+      <div>
+        <h2>How would you describe your current experience with coding and web development?</h2>
+        <label>
+          <input type="radio" name="frontEndExperience" value="frontEndBeginner" checked>
+          Complete beginner
+        </label></br>
+        <label>
+          <input type="radio" name="frontEndExperience" value="frontEndHTML">
+          Some experience with HTML & CSS
+        </label></br>
+        <label>
+          <input type="radio" name="frontEndExperience" value="frontEndJS">
+          Familiar with JavaScript
+        </label></br>
+        <label>
+          <input type="radio" name="frontEndExperience" value="frontEndTS">
+          I have experience with TypeScript
+        </label></br>
+      </div>
+      <div>
+        <h2>What kind of projects do you envision working on?</h2>
+        <select id="frontEndProjects">
+          <option value="unknown">I am not sure</option>
+          <option value="personalBlogs">Personal blogs and simple websites</option>
+          <option value="interactiveWeb">Interactive web applications with complex features</option>
+          <option value="enterpriseLevel">Enterprise-level applications with scalability in mind</option>
+        </select>
+      </div>
+      <div>
+        <h2>Are you interested in building modern, single-page applications (SPAs)?</h2>
+        <select id="frontEndSPA">
+          <option value="unknownSPA">I am not sure</option>
+          <option value="buildSPA">Yes, I want to build SPAs</option>
+          <option value="traditionalWeb">No, I'm more interested in traditional websites</option>
+        </select>
+      </div>
+      <div>
+        <h2>Which aspect of web development interests you the most?</h2>
+        <label>
+          <input type="radio" name="frontEndInterests" value="styling" checked>
+          Designing and styling web pages
+        </label></br>
+        <label>
+          <input type="radio" name="frontEndInterests" value="scripting">
+          Adding interactivity and functionality with scripting
+        </label></br>
+        <label>
+          <input type="radio" name="frontEndInterests" value="stronglyTyped">
+          Using a strongly-typed language for frontend development
+        </label></br>
+      </div>
+      <div>
+        <h2>Do you prefer a language with a lot of flexibility and ease of use, or one with strong type checking and
+          error prevention?</h2>
+        <label for="frontEndInput">Please type in your answer</label>
+        <input id="frontEndInput" type="text" name="frontEndInput">
+      </div>
+      <button type="submit">Get Suggestion</button>
+      <button type="button">Reset</button>
+    </form>
   </div>
   <div id="backEnd" class="hidden">
     <p>This is div for displaying questions for Backends developers</p>
   </div>
   <div id="fullstack" class="hidden">
     <p>This is div for displaying questions for Fullstack developers</p>
+  </div>
+  <div id="result">
+    <h3>Based on your responses:</h3>
+    <ul class="hidden">
+      <li>Your current experience level with coding and web development is <span id="experience">_____________</span>
+      </li>
+      <li>You envision working on <span id="envision">_____________</span> types of projects.</li>
+      <li>You are <span id="spa">________________</span> interested in building modern, single-page applications (SPAs).
+      </li>
+      <li>The aspect of web development that interests you the most is <span id="aspect">________________</span>.</li>
+      <li>When it comes to programming languages, you prefer <span id="prefering">________________</span>.</li>
+    </ul>
+    <p>
+      Considering your preferences and goals, we recommend you start learning <span id="language"
+        class="result">________________</span>.
+      This language aligns with your interests and experience level, making it a great choice to kickstart your web
+      development journey. Best of luck on your learning path!"
+    </p>
   </div>
 </body>
 
