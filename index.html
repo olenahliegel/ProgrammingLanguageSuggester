@@ -19,7 +19,7 @@
       Back-End
     </label>
     <label>
-      <input type="radio" name="developmentFocus" value="fullstack" checked>
+      <input type="radio" name="developmentFocus" value="fullstack">
       I like both equally
     </label>
   </form>
@@ -136,7 +136,7 @@
         </label></br>
         <label>
           <input type="radio" name="backEndInterests" value="banter">
-          I'm not sure, I'm just here for the backend banter!
+          I'm not sure, I'm just here for the backend banter
         </label></br>
         <div>
           <h2>What types of projects do you envision for yourself in the future?</h2>
@@ -149,7 +149,73 @@
     </form>
   </div>
   <div id="fullstack" class="hidden">
-    <p>This is div for displaying questions for Fullstack developers</p>
+    <form id="fullstackFocus">
+      <div>
+        <h2>How would you describe your experience in full-stack development?</h2>
+        <label>
+          <input type="radio" name="fullstackExperience" value="fullstackBeginner" checked>
+          I'm just starting my full-stack journey, it's all new to me
+        </label></br>
+        <label>
+          <input type="radio" name="fullstackExperience" value="fullstackDabbler">
+          I've dabbled in both front-end and back-end technologies
+        </label></br>
+        <label>
+          <input type="radio" name="fullstackExperience" value="fullstackExp">
+          I'm comfortable with a variety of technologies on both sides
+        </label></br>
+        <label>
+          <input type="radio" name="fullstackExperience" value="fullstackPro">
+          I've got hands-on experience in full-stack development
+        </label></br>
+      </div>
+      <div>
+        <h2>Which aspect of full-stack web development interests you the most?</h2>
+        <select id="fullstackInterests">
+          <option value="endToEnd">Developing end-to-end web applications</option>
+          <option value="serverSide">Building robust server-side logic</option>
+          <option value="interfaces">Designing intuitive user interfaces</option>
+          <option value="multipleLanguages">Working with multiple languages and frameworks</option>
+        </select>
+      </div>
+      <div>
+        <h2> Are you ready to become the web's ultimate multitasker?</h2>
+        <select id="multitasker">
+          <option value="codeJuggler">Absolutely! I was born to juggle code like a pro</option>
+          <option value="onlyJoint">Well, I'm not sure if I'm ready to join the circus just yet</option>
+          <option value="confused">I can barely handle one thing at a time, let alone a whole stack</option>
+          <option value="proJuggler">I've been practicing my juggling skills with flaming torches, so bring it on
+          </option>
+        </select>
+      </div>
+      <div>
+        <h2>If web development were an Olympic sport, which event would you excel in?</h2>
+        <label>
+          <input type="radio" name="fullstackEvents" value="codeRelay" checked>
+          I'd win gold in the "Code Relay," passing data between frontend and backend like lightning
+        </label></br>
+        <label>
+          <input type="radio" name="fullstackEvents" value="debuggingMarathon">
+          I'd dominate the "Debugging Marathon," finding and fixing bugs with the speed of a super-sleuth
+        </label></br>
+        <label>
+          <input type="radio" name="fullstackEvents" value="designDiving">
+          I'd be the champion of "Design Diving," creating stunning user interfaces that make a splash
+        </label></br>
+        <label>
+          <input type="radio" name="fullstackEvents" value="languageTriathlon">
+          I'd take home the "Language Triathlon" medal, mastering multiple languages and frameworks
+        </label></br>
+        <div>
+          <h2>As a full-stack superhero, which projects would you consider your mortal enemies and which ones would be
+            your loyal sidekicks?</h2>
+          <label for="fullstackInput">Please type in your answer</label>
+          <input id="fullstackInput" type="text" name="fullstackInput">
+        </div>
+        <button id="fullstackSubmit" type="submit" disabled>Get Suggestion</button>
+        <button id="fullstackReset" type="button" class="hidden">Reset answers</button>
+      </div>
+    </form>
   </div>
   <div id="result" class="hidden">
     <h3>Based on your responses:</h3>
