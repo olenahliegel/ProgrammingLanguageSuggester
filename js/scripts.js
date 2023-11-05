@@ -1,4 +1,4 @@
-//Business logic
+//Business logic of recommendation for FrontEnd language
 function recommendFrontendLanguage(currentExp, projectEnvision, spaSelection, frontEndInterests) {
   if (currentExp === "frontEndTS") {
     return "Angular";
@@ -27,6 +27,7 @@ function recommendFrontendLanguage(currentExp, projectEnvision, spaSelection, fr
   } else return "Java Script";
 }
 
+//Business logic of recommendation for BackEnd language
 function recommendationBackEndLanguage(currentExp, projectTypes, microServices, backEndInterests) {
   let result = 0;
 
@@ -74,7 +75,8 @@ function recommendationBackEndLanguage(currentExp, projectTypes, microServices, 
   return "Java";
 }
 
-function recommendationBackEndLanguage(fullstackExperience, fullstackInterests, multitasker, fullstackEvents) {
+//Business logic of recommendation for FullStack language
+function recommendationFullstackLanguage(fullstackExperience, fullstackInterests, multitasker, fullstackEvents) {
   let result = 0;
   if (fullstackExperience === "fullstackBeginner")
     result += 1;
@@ -122,20 +124,181 @@ function recommendationBackEndLanguage(fullstackExperience, fullstackInterests, 
     return "Java";
 }
 
-function outputForFirstAnswerResult(answer) {
-  const frontEndOutput = "Your current experience level with coding and web development is: "
-  if (answer === "frontEndBeginner") {
-    return frontEndOutput + "complete beginner";
-  } else if (answer === "frontEndHTML") {
-    return frontEndOutput + "some experience with HTML & CSS";
-  } else if (answer === "frontEndJS") {
-    return frontEndOutput + "experience with Java Script";
-  } else if (answer === "frontEndTS") {
-    return frontEndOutput + "experience with Type Script";
-  }
+//Business logic of displaying answers for user
+function outputForStaticAnswerResult(answer) {
+  if (answer === "frontEndBeginner" ||
+    answer === "frontEndHTML" ||
+    answer === "frontEndJS" ||
+    answer === "frontEndTS")
+    return "Your current experience level with coding is: ";
+
+  if (answer === "personalBlogs" ||
+    answer === "unknown" ||
+    answer === "interactiveWeb" ||
+    answer === "enterpriseLevel")
+    return "You envision working on: ";
+
+  if (answer === "unknownSPA" ||
+    answer === "buildSPA" ||
+    answer === "traditionalWeb")
+    return "Your attitude in building modern, single-page applications (SPAs) is: ";
+
+  if (answer === "styling" ||
+    answer === "scripting" ||
+    answer === "stronglyTyped")
+    return "Your are interesting in:  "
+
+  if (answer === "backEndBeginner" ||
+    answer === "pascal" ||
+    answer === "cPlusPlus" ||
+    answer === "assembler")
+    return "Your current experience level with coding is: ";
+
+  if (answer === "unsure" ||
+    answer === "enterpriseApps" ||
+    answer === "webApps" ||
+    answer === "machineLearning")
+    return "You would prefer to work on: ";
+
+  if (answer === "pieces" ||
+    answer === "monolithic" ||
+    answer === "confused")
+    return "Your attitude in possibilities of microservices architecture: ";
+
+  if (answer === "dataDeep" ||
+    answer === "frontWeb" ||
+    answer === "banter")
+    return "You dream of handling server-side logic and databases:  ";
+
+  if (answer === "fullstackBeginner" ||
+    answer === "fullstackDabbler" ||
+    answer === "fullstackExp" ||
+    answer === "fullstackPro")
+    return "Your current experience level with coding is: ";
+
+  if (answer === "endToEnd" ||
+    answer === "serverSide" ||
+    answer === "interfaces" ||
+    answer === "multipleLanguages")
+    return "You is interested in the most: ";
+
+  if (answer === "codeJuggler" ||
+    answer === "onlyJoint" ||
+    answer === "multitaskerConfused" ||
+    answer === "proJuggler")
+    return "You are ready to become the web's ultimate multitasker: ";
+
+  if (answer === "codeRelay" ||
+    answer === "debuggingMarathon" ||
+    answer === "designDiving" ||
+    answer === "languageTriathlon")
+    return "If web development were an Olympic sport, you would excel in: ";
 }
 
-//User Interface logic
+//Business logic of displaying answers for user
+function outputForDynamicAnswerResult(answer) {
+  if (answer === "frontEndBeginner")
+    return "complete beginner";
+  else if (answer === "frontEndHTML")
+    return "some experience with HTML & CSS";
+  else if (answer === "frontEndJS")
+    return "familiar with JavaScript";
+  else if (answer === "frontEndTS")
+    return "I have experience with TypeScript";
+
+  if (answer === "unknown")
+    return "all possible projects";
+  else if (answer === "personalBlogs")
+    return "personal blogs and simple websites";
+  else if (answer === "interactiveWeb")
+    return "interactive web applications with complex features";
+  else if (answer === "enterpriseLevel")
+    return "enterprise-level applications with scalability in mind";
+
+  if (answer === "unknownSPA")
+    return "you are neutral to this question";
+  else if (answer === "buildSPA")
+    return "you would like to build SPAs";
+  else if (answer === "traditionalWeb")
+    return "you are more interested in traditional websites";
+
+  if (answer === "styling")
+    return "designing and styling web pages";
+  else if (answer === "scripting")
+    return "adding interactivity and functionality with scripting";
+  else if (answer === "stronglyTyped")
+    return "using a strongly-typed language for frontend development";
+
+  if (answer === "backEndBeginner")
+    return "complete beginner";
+  else if (answer === "pascal")
+    return "you worked with Pascal";
+  else if (answer === "cPlusPlus")
+    return "you worked with C++";
+  else if (answer === "assembler")
+    return "you know Assembler";
+
+  if (answer === "unsure")
+    return "different kind of applications";
+  else if (answer === "enterpriseApps")
+    return "enterprise-level applications";
+  else if (answer === "webApps")
+    return "web applications and microservices";
+  else if (answer === "machineLearning")
+    return "machine learning and data analysis projects";
+
+  if (answer === "pieces")
+    return "you want to break down your app into bite-sized pieces";
+  else if (answer === "monolithic")
+    return "you prefer the monolithic approach";
+  else if (answer === "confused")
+    return "you would like to understand the microservices architecture";
+
+  if (answer === "dataDeep")
+    return "you can't wait to dive into the data deep end";
+  else if (answer === "frontWeb")
+    return "you'd rather stay on the front porch of the web";
+  else if (answer === "banter")
+    return "you are just here for the backend banter";
+
+  if (answer === "fullstackBeginner")
+    return "you are just starting your full-stack journey";
+  else if (answer === "fullstackDabbler")
+    return "you had some experience in both front-end and back-end technologies";
+  else if (answer === "fullstackExp")
+    return "you are comfortable with a variety of technologies on both sides";
+  else if (answer === "fullstackPro")
+    return "you've got hands-on experience in full-stack development";
+
+  if (answer === "endToEnd")
+    return "developing end-to-end web applications";
+  else if (answer === "serverSide")
+    return "building robust server-side logic";
+  else if (answer === "interfaces")
+    return "designing intuitive user interfaces";
+  else if (answer === "multipleLanguages")
+    return "working with multiple languages and frameworks";
+
+  if (answer === "codeJuggler")
+    return "you was born to juggle code like a pro:=)";
+  else if (answer === "onlyJoint")
+    return "you are ready to join the circus just yet";
+  else if (answer === "multitaskerConfused")
+    return "you are good at handling one thing at a time, let alone a whole stack";
+  else if (answer === "proJuggler")
+    return "you've been practicing your juggling skills with flaming torches, so bring it on";
+
+  if (answer === "codeRelay")
+    return "you'd win gold in the 'Code Relay', passing data between frontend and backend like lightning";
+  else if (answer === "debuggingMarathon")
+    return "you'd dominate the 'Debugging Marathon', finding and fixing bugs with the speed of a super-sleuth";
+  else if (answer === "designDiving")
+    return "you'd be the champion of 'Design Diving', creating stunning user interfaces that make a splash";
+  else if (answer === "languageTriathlon")
+    return "you'd take home the 'Language Triathlon' medal, mastering multiple languages and frameworks";
+}
+
+//User Interface logic for main selection
 function handleUserChoice() {
   const userChoice = document.querySelector("input[name='developmentFocus']:checked").value;
   if (userChoice) {
@@ -155,7 +318,7 @@ function handleUserChoice() {
   }
 }
 
-//FrontEnd questionary forms
+//User Interface logic for FrontEnd questionary form
 function handleFrontEndAnswers(event) {
   event.preventDefault();
 
@@ -169,12 +332,19 @@ function handleFrontEndAnswers(event) {
     document.querySelector("div#error").setAttribute("class", "hidden");
     document.querySelector("div#result").removeAttribute("class");
 
-    let languageRecommendationResult = recommendFrontendLanguage(currentExp, projectEnvision, spaSelection, frontEndInterests);
-    document.querySelector("span#language").innerText = languageRecommendationResult;
-    //document.querySelector("li#experience").innerText = outputForFirstAnswerResult(currentExp);
-    //document.querySelector("span#aspect").innerText = frontEndInterests;
-    //document.querySelector("span#spa").innerText = spaSelection;
-    //document.querySelector("span#envision").innerText = projectEnvision;
+    let languageFrontEndResult = recommendFrontendLanguage(currentExp, projectEnvision, spaSelection, frontEndInterests);
+    document.querySelector("span#language").innerText = languageFrontEndResult;
+
+    document.querySelector("span#firstAnswerStatic").innerText = outputForStaticAnswerResult(currentExp);
+    document.querySelector("span#secondAnswerStatic").innerText = outputForStaticAnswerResult(projectEnvision);
+    document.querySelector("span#thirdAnswerStatic").innerText = outputForStaticAnswerResult(spaSelection);
+    document.querySelector("span#fourthAnswerStatic").innerText = outputForStaticAnswerResult(frontEndInterests);
+
+    document.querySelector("span#firstAnswerDynamic").innerText = outputForDynamicAnswerResult(currentExp);
+    document.querySelector("span#secondAnswerDynamic").innerText = outputForDynamicAnswerResult(projectEnvision);
+    document.querySelector("span#thirdAnswerDynamic").innerText = outputForDynamicAnswerResult(spaSelection);
+    document.querySelector("span#fourthAnswerDynamic").innerText = outputForDynamicAnswerResult(frontEndInterests);
+
     //document.querySelector("span#preferring").innerText = languagePreference;
   }
   else {
@@ -185,6 +355,7 @@ function handleFrontEndAnswers(event) {
   document.getElementById("frontReset").removeAttribute("class");
 }
 
+//User Interface logic for Submit button in FrontEnd questionary form
 function updateFrontSubmitButtonStatus() {
   const currentExp = document.querySelector("input[name='frontEndExperience']:checked").value;
   const projectEnvision = document.getElementById("frontEndProjects").value;
@@ -200,6 +371,7 @@ function updateFrontSubmitButtonStatus() {
   }
 }
 
+//User Interface logic for resetting entering results in FrontEnd questionary form
 function resetFrontForm() {
   document.getElementById("frontSubmit").setAttribute("disabled", "true");
   document.querySelector("input[name='frontEndExperience'][value='frontEndBeginner']").checked = true;
@@ -211,8 +383,7 @@ function resetFrontForm() {
   document.querySelector("div#error").setAttribute("class", "hidden");
 }
 
-
-//BackEnd questionary form
+//User Interface logic for BackEnd questionary form
 function handleBackEndAnswers(event) {
   event.preventDefault();
 
@@ -225,12 +396,17 @@ function handleBackEndAnswers(event) {
   if (currentExp && projectTypes && microServices && backEndInterests && backEndInput) {
     document.querySelector("div#error").setAttribute("class", "hidden");
     document.querySelector("div#result").removeAttribute("class");
-    let languageRecommendationResult = recommendationBackEndLanguage(currentExp, projectTypes, microServices, backEndInterests);
-    document.querySelector("span#language").innerText = languageRecommendationResult;
-    //document.querySelector("li#experience").innerText = outputForFirstAnswerResult(currentExp);
-    //document.querySelector("span#aspect").innerText = frontEndInterests;
-    //document.querySelector("span#spa").innerText = spaSelection;
-    //document.querySelector("span#envision").innerText = projectEnvision;
+    let languageBackEndResult = recommendationBackEndLanguage(currentExp, projectTypes, microServices, backEndInterests);
+    document.querySelector("span#language").innerText = languageBackEndResult;
+    document.querySelector("span#firstAnswerStatic").innerText = outputForStaticAnswerResult(currentExp);
+    document.querySelector("span#secondAnswerStatic").innerText = outputForStaticAnswerResult(projectTypes);
+    document.querySelector("span#thirdAnswerStatic").innerText = outputForStaticAnswerResult(microServices);
+    document.querySelector("span#fourthAnswerStatic").innerText = outputForStaticAnswerResult(backEndInterests);
+
+    document.querySelector("span#firstAnswerDynamic").innerText = outputForDynamicAnswerResult(currentExp);
+    document.querySelector("span#secondAnswerDynamic").innerText = outputForDynamicAnswerResult(projectTypes);
+    document.querySelector("span#thirdAnswerDynamic").innerText = outputForDynamicAnswerResult(microServices);
+    document.querySelector("span#fourthAnswerDynamic").innerText = outputForDynamicAnswerResult(backEndInterests);
     //document.querySelector("span#preferring").innerText = languagePreference;
 
   } else {
@@ -241,7 +417,7 @@ function handleBackEndAnswers(event) {
   document.getElementById("backReset").removeAttribute("class");
 }
 
-
+//User Interface logic for Submit button in BackEnd questionary form
 function updateBackSubmitButtonStatus() {
   const currentExp = document.querySelector("input[name='backEndExperience']:checked").value;
   const projectTypes = document.getElementById("projectTypes").value;
@@ -257,6 +433,7 @@ function updateBackSubmitButtonStatus() {
   }
 }
 
+//User Interface logic for resetting entering results in BackEnd questionary form
 function resetBackForm() {
   document.getElementById("backSubmit").setAttribute("disabled", "true");
   document.querySelector("input[name='backEndExperience'][value='backEndBeginner']").checked = true;
@@ -268,7 +445,7 @@ function resetBackForm() {
   document.querySelector("div#error").setAttribute("class", "hidden");
 }
 
-//FullStack questionary form
+//User Interface logic for FullStack questionary form
 function handleFullstackAnswers(event) {
   event.preventDefault();
 
@@ -281,12 +458,21 @@ function handleFullstackAnswers(event) {
   if (fullstackExperience && fullstackInterests && multitasker && fullstackEvents && fullstackInput) {
     document.querySelector("div#error").setAttribute("class", "hidden");
     document.querySelector("div#result").removeAttribute("class");
-    let languageRecommendationResult = recommendationBackEndLanguage(fullstackExperience, fullstackInterests, multitasker, fullstackEvents);
-    document.querySelector("span#language").innerText = languageRecommendationResult;
-    //document.querySelector("li#experience").innerText = outputForFirstAnswerResult(currentExp);
-    //document.querySelector("span#aspect").innerText = frontEndInterests;
-    //document.querySelector("span#spa").innerText = spaSelection;
-    //document.querySelector("span#envision").innerText = projectEnvision;
+
+    let languageFullstackResult = recommendationFullstackLanguage(fullstackExperience, fullstackInterests, multitasker, fullstackEvents);
+
+    document.querySelector("span#language").innerText = languageFullstackResult;
+    document.querySelector("span#firstAnswerStatic").innerText = outputForStaticAnswerResult(fullstackExperience);
+    document.querySelector("span#secondAnswerStatic").innerText = outputForStaticAnswerResult(fullstackInterests);
+    document.querySelector("span#thirdAnswerStatic").innerText = outputForStaticAnswerResult(multitasker);
+    document.querySelector("span#fourthAnswerStatic").innerText = outputForStaticAnswerResult(fullstackEvents);
+
+    document.querySelector("span#firstAnswerDynamic").innerText = outputForDynamicAnswerResult(fullstackExperience);
+    document.querySelector("span#secondAnswerDynamic").innerText = outputForDynamicAnswerResult(fullstackInterests);
+    document.querySelector("span#thirdAnswerDynamic").innerText = outputForDynamicAnswerResult(multitasker);
+    document.querySelector("span#fourthAnswerDynamic").innerText = outputForDynamicAnswerResult(fullstackEvents);
+
+
     //document.querySelector("span#preferring").innerText = languagePreference;
 
   } else {
@@ -297,6 +483,7 @@ function handleFullstackAnswers(event) {
   document.getElementById("fullstackReset").removeAttribute("class");
 }
 
+//User Interface logic for Submit button in FullStack questionary form
 function updateFullstackSubmitButtonStatus() {
   const currentExp = document.querySelector("input[name='fullstackExperience']:checked").value;
   const fullstackInterests = document.getElementById("fullstackInterests").value;
@@ -312,6 +499,7 @@ function updateFullstackSubmitButtonStatus() {
   }
 }
 
+//User Interface logic for resetting entering results in FullStack questionary form
 function resetFullStackForm() {
   document.getElementById("fullstackSubmit").setAttribute("disabled", "true");
   document.querySelector("input[name='fullstackExperience'][value='fullstackBeginner']").checked = true;
@@ -323,8 +511,9 @@ function resetFullStackForm() {
   document.querySelector("div#error").setAttribute("class", "hidden");
 }
 
-
+//User interface logic: load window even Listener
 window.addEventListener("load", function () {
+
   const developmentFocusForm = document.getElementById("developmentFocus");
   developmentFocusForm.addEventListener("click", handleUserChoice);
 

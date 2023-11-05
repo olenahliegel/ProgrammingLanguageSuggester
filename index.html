@@ -183,7 +183,7 @@
         <select id="multitasker">
           <option value="codeJuggler">Absolutely! I was born to juggle code like a pro</option>
           <option value="onlyJoint">Well, I'm not sure if I'm ready to join the circus just yet</option>
-          <option value="confused">I can barely handle one thing at a time, let alone a whole stack</option>
+          <option value="multitaskerConfused">I can barely handle one thing at a time, let alone a whole stack</option>
           <option value="proJuggler">I've been practicing my juggling skills with flaming torches, so bring it on
           </option>
         </select>
@@ -192,15 +192,15 @@
         <h2>If web development were an Olympic sport, which event would you excel in?</h2>
         <label>
           <input type="radio" name="fullstackEvents" value="codeRelay" checked>
-          I'd win gold in the "Code Relay," passing data between frontend and backend like lightning
+          I'd win gold in the "Code Relay", passing data between frontend and backend like lightning
         </label></br>
         <label>
           <input type="radio" name="fullstackEvents" value="debuggingMarathon">
-          I'd dominate the "Debugging Marathon," finding and fixing bugs with the speed of a super-sleuth
+          I'd dominate the "Debugging Marathon", finding and fixing bugs with the speed of a super-sleuth
         </label></br>
         <label>
           <input type="radio" name="fullstackEvents" value="designDiving">
-          I'd be the champion of "Design Diving," creating stunning user interfaces that make a splash
+          I'd be the champion of "Design Diving", creating stunning user interfaces that make a splash
         </label></br>
         <label>
           <input type="radio" name="fullstackEvents" value="languageTriathlon">
@@ -220,18 +220,16 @@
   <div id="result" class="hidden">
     <h3>Based on your responses:</h3>
     <ul>
-      <li id="experience"></li>
-      <li>You envision working on <span id="envision">_____________</span> types of projects.</li>
-      <li>You are <span id="spa">________________</span> interested in building modern, single-page applications (SPAs).
-      </li>
-      <li>The aspect of web development that interests you the most is <span id="aspect">________________</span>.</li>
+      <li><span id="firstAnswerStatic"></span><span id="firstAnswerDynamic" class="userAnswer"></span></li>
+      <li><span id="secondAnswerStatic"></span><span id="secondAnswerDynamic" class="userAnswer"></span></li>
+      <li><span id="thirdAnswerStatic"></span><span id="thirdAnswerDynamic" class="userAnswer"></span></li>
+      <li><span id="fourthAnswerStatic"></span><span id="fourthAnswerDynamic" class="userAnswer"></span></li>
       <li>When it comes to programming languages, you prefer <span id="preferring">________________</span>.</li>
     </ul>
     <p>
       Considering your preferences and goals, we recommend you start learning <span id="language"
         class="result">________________</span>.
-      This language aligns with your interests and experience level, making it a great choice to kickstart your web
-      development journey. Best of luck on your learning path!"
+      This language aligns with your interests and experience level.Best of luck on your learning path!"
     </p>
   </div>
   <div id="error" class="hidden">
