@@ -9,20 +9,44 @@
 
 <body>
   <h1>Programming Language Suggester</h1>
-  <form id="developmentFocus">
-    <label>
-      <input type="radio" name="developmentFocus" value="frontEnd">
-      Front-End
-    </label>
-    <label>
-      <input type="radio" name="developmentFocus" value="backEnd">
-      Back-End
-    </label>
-    <label>
-      <input type="radio" name="developmentFocus" value="fullstack">
-      I like both equally
-    </label>
-  </form>
+  <p class="developmentFocus"> Please select the area of programming that you are interested in</p>
+  <div class="developmentFocusSelection">
+    <form id="developmentFocus">
+      <div class="radio-container">
+        <label class="radio-label">
+          <input type="radio" name="developmentFocus" value="frontEnd">
+          Front-End
+        </label>
+      </div>
+      <div class="radio-container">
+        <label>
+          <input type="radio" name="developmentFocus" value="backEnd">
+          Back-End
+        </label>
+      </div>
+      <div class="radio-container">
+        <label>
+          <input type="radio" name="developmentFocus" value="fullstack">
+          I like both equally
+        </label>
+      </div>
+    </form>
+  </div>
+  <div id="result" class="hidden">
+    <h3>Based on your responses:</h3>
+    <ul>
+      <li><span id="firstAnswerStatic"></span><span id="firstAnswerDynamic" class="userAnswer"></span></li>
+      <li><span id="secondAnswerStatic"></span><span id="secondAnswerDynamic" class="userAnswer"></span></li>
+      <li><span id="thirdAnswerStatic"></span><span id="thirdAnswerDynamic" class="userAnswer"></span></li>
+      <li><span id="fourthAnswerStatic"></span><span id="fourthAnswerDynamic" class="userAnswer"></span></li>
+      <li><span id="fifthAnswerStatic"></span><span id="fifthAnswerDynamic" class="userAnswer"></span></li>
+    </ul>
+    <p>
+      Considering your preferences and goals, we recommend you start learning <span id="language"
+        class="userAnswer">________________</span>.</p>
+    <p>This language aligns with your interests and experience level.Best of luck on your learning path!
+    </p>
+  </div>
   <div id="frontEnd" class="hidden">
     <form id="frontEndFocus">
       <div>
@@ -82,8 +106,10 @@
         <label for="frontEndInput">Please type in your answer</label>
         <input id="frontEndInput" type="text" name="frontEndInput">
       </div>
-      <button id="frontSubmit" type="submit" disabled>Get Suggestion</button>
-      <button id="frontReset" type="button" class="hidden">Reset answers</button>
+      <div class="button-container">
+        <button id="frontSubmit" type="submit" disabled>Get Suggestion</button>
+        <button id="frontReset" type="button" class="hidden">Reset answers</button>
+      </div>
     </form>
   </div>
   <div id="backEnd" class="hidden">
@@ -143,8 +169,10 @@
           <label for="backEndInput">Please type in your answer</label>
           <input id="backEndInput" type="text" name="backEndInput">
         </div>
-        <button id="backSubmit" type="submit" disabled>Get Suggestion</button>
-        <button id="backReset" type="button" class="hidden">Reset answers</button>
+        <div class="button-container">
+          <button id="backSubmit" type="submit" disabled>Get Suggestion</button>
+          <button id="backReset" type="button" class="hidden">Reset answers</button>
+        </div>
       </div>
     </form>
   </div>
@@ -212,25 +240,12 @@
           <label for="fullstackInput">Please type in your answer</label>
           <input id="fullstackInput" type="text" name="fullstackInput">
         </div>
-        <button id="fullstackSubmit" type="submit" disabled>Get Suggestion</button>
-        <button id="fullstackReset" type="button" class="hidden">Reset answers</button>
+        <div class="button-container">
+          <button id="fullstackSubmit" type="submit" class="button-material" disabled>Get Suggestion</button>
+          <button id="fullstackReset" type="button" class="hidden">Reset answers</button>
+        </div>
       </div>
     </form>
-  </div>
-  <div id="result" class="hidden">
-    <h3>Based on your responses:</h3>
-    <ul>
-      <li><span id="firstAnswerStatic"></span><span id="firstAnswerDynamic" class="userAnswer"></span></li>
-      <li><span id="secondAnswerStatic"></span><span id="secondAnswerDynamic" class="userAnswer"></span></li>
-      <li><span id="thirdAnswerStatic"></span><span id="thirdAnswerDynamic" class="userAnswer"></span></li>
-      <li><span id="fourthAnswerStatic"></span><span id="fourthAnswerDynamic" class="userAnswer"></span></li>
-      <li>When it comes to programming languages, you prefer <span id="preferring">________________</span>.</li>
-    </ul>
-    <p>
-      Considering your preferences and goals, we recommend you start learning <span id="language"
-        class="result">________________</span>.
-      This language aligns with your interests and experience level.Best of luck on your learning path!"
-    </p>
   </div>
   <div id="error" class="hidden">
     <h3></h3>

@@ -1,11 +1,118 @@
+body {
+  background-color: #030242;
+  transition: background-color 0.3s;
+  color: rgb(243, 245, 248);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  position: relative;
+  margin: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 1%;
+  position: relative;
+  padding: 2px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.developmentFocus {
+  text-align: center;
+}
+
+.developmentFocusSelection {
+  text-align: center;
+  border-bottom: solid rgb(246, 248, 250);
+  border-width: 5px;
+  font-size: 30px;
+
+}
+
+.radio-container input[type="radio"] {
+  transform: scale(1.5);
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.radio-container {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+select {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  border: 3px solid rgb(243, 245, 248);
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="text"]:hover,
+select:hover,
+input[type="text"]:focus,
+select:focus {
+  border-color: #083041;
+  outline: none;
+}
+
 .hidden {
   display: none;
 }
 
 .userAnswer {
   color: red;
+  font-weight: bold;
 }
 
-.disable {
+#language {
+  font-size: 30px;
+  color: rgb(204, 255, 0);
+  text-decoration: underline;
+}
+
+.button-container {
+  align-items: center;
+  border-bottom: solid rgb(246, 248, 250);
+  border-width: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+button:disabled {
+  background-color: #2140eb;
+  color: #EDE7F6;
   cursor: not-allowed;
+  opacity: 0.5;
+  font-size: 30px;
+  box-shadow: 2px 2px 5px rgba(241, 243, 246, 0.3);
+}
+
+button {
+  background-color: #2140eb;
+  color: #EDE7F6;
+  font-size: 30px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px rgba(241, 243, 244, 0.3);
+}
+
+#error {
+  color: red;
+  font-weight: bold;
+}
+
+#result {
+  font-size: 20px;
+  border-bottom: solid rgb(246, 248, 250);
+  border-width: 5px;
 }

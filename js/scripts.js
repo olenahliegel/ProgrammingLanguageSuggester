@@ -345,7 +345,8 @@ function handleFrontEndAnswers(event) {
     document.querySelector("span#thirdAnswerDynamic").innerText = outputForDynamicAnswerResult(spaSelection);
     document.querySelector("span#fourthAnswerDynamic").innerText = outputForDynamicAnswerResult(frontEndInterests);
 
-    //document.querySelector("span#preferring").innerText = languagePreference;
+    document.querySelector("span#fifthAnswerStatic").innerText = "When it comes to programming languages, you prefer ";
+    document.querySelector("span#fifthAnswerDynamic").innerText = languagePreference;
   }
   else {
     document.querySelector("div#error").removeAttribute("class");
@@ -407,7 +408,10 @@ function handleBackEndAnswers(event) {
     document.querySelector("span#secondAnswerDynamic").innerText = outputForDynamicAnswerResult(projectTypes);
     document.querySelector("span#thirdAnswerDynamic").innerText = outputForDynamicAnswerResult(microServices);
     document.querySelector("span#fourthAnswerDynamic").innerText = outputForDynamicAnswerResult(backEndInterests);
-    //document.querySelector("span#preferring").innerText = languagePreference;
+
+    document.querySelector("span#fifthAnswerStatic").innerText = "When it comes to projects, you prefer  for yourself in the future. These projects are: ";
+    document.querySelector("span#fifthAnswerDynamic").innerText = backEndInput;
+
 
   } else {
     document.querySelector("div#error").removeAttribute("class");
@@ -472,8 +476,8 @@ function handleFullstackAnswers(event) {
     document.querySelector("span#thirdAnswerDynamic").innerText = outputForDynamicAnswerResult(multitasker);
     document.querySelector("span#fourthAnswerDynamic").innerText = outputForDynamicAnswerResult(fullstackEvents);
 
-
-    //document.querySelector("span#preferring").innerText = languagePreference;
+    document.querySelector("span#fifthAnswerStatic").innerText = "As a full-stack superhero you would consider your mortal enemies and  loyal sidekicks as: ";
+    document.querySelector("span#fifthAnswerDynamic").innerText = fullstackInput;
 
   } else {
     document.querySelector("div#error").removeAttribute("class");
@@ -511,7 +515,7 @@ function resetFullStackForm() {
   document.querySelector("div#error").setAttribute("class", "hidden");
 }
 
-//User interface logic: load window even Listener
+//User interface logic for loading window even Listener
 window.addEventListener("load", function () {
 
   const developmentFocusForm = document.getElementById("developmentFocus");
