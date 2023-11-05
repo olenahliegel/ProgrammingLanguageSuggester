@@ -47,22 +47,22 @@
     <form id="frontEndFocus">
       <div>
         <h2>How would you describe your current experience with coding and web development?</h2>
-        <label>
-          <input type="radio" name="frontEndExperience" value="frontEndBeginner" checked>
+        <label for="frontEndBeginner">
+          <input type="radio" id="frontEndBeginner" name="frontEndExperience" value="frontEndBeginner" checked>
           Complete beginner
-        </label></br>
-        <label>
-          <input type="radio" name="frontEndExperience" value="frontEndHTML">
+        </label><br>
+        <label for="frontEndHTML">
+          <input type="radio" id="frontEndHTML" name="frontEndExperience" value="frontEndHTML">
           Some experience with HTML & CSS
-        </label></br>
-        <label>
-          <input type="radio" name="frontEndExperience" value="frontEndJS">
+        </label><br>
+        <label for="frontEndJS">
+          <input type="radio" id="frontEndJS" name="frontEndExperience" value="frontEndJS">
           Familiar with JavaScript
-        </label></br>
-        <label>
-          <input type="radio" name="frontEndExperience" value="frontEndTS">
+        </label><br>
+        <label for="frontEndTS">
+          <input type="radio" id="frontEndTS" name="frontEndExperience" value="frontEndTS">
           I have experience with TypeScript
-        </label></br>
+        </label><br>
       </div>
       <div>
         <h2>What kind of projects do you envision working on?</h2>
@@ -83,18 +83,18 @@
       </div>
       <div>
         <h2>Which aspect of web development interests you the most?</h2>
-        <label>
-          <input type="radio" name="frontEndInterests" value="styling" checked>
+        <label for="styling">
+          <input type="radio" id="styling" name="frontEndInterests" value="styling" checked>
           Designing and styling web pages
-        </label></br>
-        <label>
-          <input type="radio" name="frontEndInterests" value="scripting">
+        </label><br>
+        <label for="scripting">
+          <input type="radio" id="scripting" name="frontEndInterests" value="scripting">
           Adding interactivity and functionality with scripting
-        </label></br>
-        <label>
-          <input type="radio" name="frontEndInterests" value="stronglyTyped">
+        </label><br>
+        <label for="stronglyTyped">
+          <input type="radio" id="stronglyTyped" name="frontEndInterests" value="stronglyTyped">
           Using a strongly-typed language for frontend development
-        </label></br>
+        </label><br>
       </div>
       <div>
         <h2>Do you prefer a language with a lot of flexibility and ease of use, or one with strong type checking and
@@ -112,22 +112,22 @@
     <form id="backEndFocus">
       <div>
         <h2>Which backend programming language are you most familiar with or have experience in?</h2>
-        <label>
-          <input type="radio" name="backEndExperience" value="backEndBeginner" checked>
+        <label for="backEndBeginner">
+          <input type="radio" id="backEndBeginner" name="backEndExperience" value="backEndBeginner" checked>
           Complete beginner
-        </label></br>
-        <label>
-          <input type="radio" name="backEndExperience" value="pascal">
+        </label><br>
+        <label for="pascal">
+          <input type="radio" id="pascal" name="backEndExperience" value="pascal">
           I remember Pascal
-        </label></br>
-        <label>
-          <input type="radio" name="backEndExperience" value="cPlusPlus">
+        </label><br>
+        <label for="cPlusPlus">
+          <input type="radio" id="cPlusPlus" name="backEndExperience" value="cPlusPlus">
           I saw C++
-        </label></br>
-        <label>
-          <input type="radio" name="backEndExperience" value="assembler">
+        </label><br>
+        <label for="assembler">
+          <input type="radio" id="assembler" name="backEndExperience" value="assembler">
           Only Assembler, only hardcore
-        </label></br>
+        </label><br>
       </div>
       <div>
         <h2>What types of systems and projects would you prefer to work on in your backend development?</h2>
@@ -148,50 +148,51 @@
       </div>
       <div>
         <h2>Do you dream of handling server-side logic and databases?</h2>
-        <label>
-          <input type="radio" name="backEndInterests" value="dataDeep" checked>
+        <label for="dataDeep">
+          <input type="radio" id="dataDeep" name="backEndInterests" value="dataDeep" checked>
           Oh yes, I can't wait to dive into the data deep end
-        </label></br>
-        <label>
-          <input type="radio" name="backEndInterests" value="frontWeb">
+        </label><br>
+        <label for="frontWeb">
+          <input type="radio" id="frontWeb" name="backEndInterests" value="frontWeb">
           No thanks, I'd rather stay on the front porch of the web
-        </label></br>
-        <label>
-          <input type="radio" name="backEndInterests" value="banter">
+        </label><br>
+        <label for="banter">
+          <input type="radio" id="banter" name="backEndInterests" value="banter">
           I'm not sure, I'm just here for the backend banter
-        </label></br>
-        <div>
-          <h2>What types of projects do you envision for yourself in the future?</h2>
-          <label for="backEndInput">Please type in your answer</label>
-          <input id="backEndInput" type="text" name="backEndInput">
-        </div>
-        <div class="button-container">
-          <button id="backSubmit" type="submit" disabled>Get Suggestion</button>
-          <button id="backReset" type="button" class="hidden">Reset answers</button>
-        </div>
+        </label><br>
       </div>
-    </form>
+      <div>
+        <h2>What types of projects do you envision for yourself in the future?</h2>
+        <label for="backEndInput">Please type in your answer</label>
+        <input id="backEndInput" type="text" name="backEndInput">
+      </div>
+      <div class="button-container">
+        <button id="backSubmit" type="submit" disabled>Get Suggestion</button>
+        <button id="backReset" type="button" class="hidden">Reset answers</button>
+      </div>
+  </div>
+  </form>
   </div>
   <div id="fullstack" class="hidden">
     <form id="fullstackFocus">
       <div>
         <h2>How would you describe your experience in full-stack development?</h2>
-        <label>
-          <input type="radio" name="fullstackExperience" value="fullstackBeginner" checked>
+        <label for="fullstackBeginner">
+          <input type="radio" id="fullstackBeginner" name="fullstackExperience" value="fullstackBeginner" checked>
           I'm just starting my full-stack journey, it's all new to me
-        </label></br>
-        <label>
-          <input type="radio" name="fullstackExperience" value="fullstackDabbler">
+        </label><br>
+        <label for="fullstackDabbler">
+          <input type="radio" id="fullstackDabbler" name="fullstackExperience" value="fullstackDabbler">
           I've dabbled in both front-end and back-end technologies
-        </label></br>
-        <label>
-          <input type="radio" name="fullstackExperience" value="fullstackExp">
+        </label><br>
+        <label for="fullstackExp">
+          <input type="radio" id="fullstackExp" name="fullstackExperience" value="fullstackExp">
           I'm comfortable with a variety of technologies on both sides
-        </label></br>
-        <label>
-          <input type="radio" name="fullstackExperience" value="fullstackPro">
+        </label><br>
+        <label for="fullstackPro">
+          <input type="radio" id="fullstackPro" name="fullstackExperience" value="fullstackPro">
           I've got hands-on experience in full-stack development
-        </label></br>
+        </label><br>
       </div>
       <div>
         <h2>Which aspect of full-stack web development interests you the most?</h2>
@@ -214,34 +215,35 @@
       </div>
       <div>
         <h2>If web development were an Olympic sport, which event would you excel in?</h2>
-        <label>
-          <input type="radio" name="fullstackEvents" value="codeRelay" checked>
+        <label for="codeRelay">
+          <input type="radio" id="codeRelay" name="fullstackEvents" value="codeRelay" checked>
           I'd win gold in the "Code Relay", passing data between frontend and backend like lightning
-        </label></br>
-        <label>
-          <input type="radio" name="fullstackEvents" value="debuggingMarathon">
+        </label><br>
+        <label for="debuggingMarathon">
+          <input type="radio" id="debuggingMarathon" name="fullstackEvents" value="debuggingMarathon">
           I'd dominate the "Debugging Marathon", finding and fixing bugs with the speed of a super-sleuth
-        </label></br>
-        <label>
-          <input type="radio" name="fullstackEvents" value="designDiving">
+        </label><br>
+        <label for="designDiving">
+          <input type="radio" id="designDiving" name="fullstackEvents" value="designDiving">
           I'd be the champion of "Design Diving", creating stunning user interfaces that make a splash
-        </label></br>
-        <label>
-          <input type="radio" name="fullstackEvents" value="languageTriathlon">
+        </label><br>
+        <label for="languageTriathlon">
+          <input type="radio" id="languageTriathlon" name="fullstackEvents" value="languageTriathlon">
           I'd take home the "Language Triathlon" medal, mastering multiple languages and frameworks
-        </label></br>
-        <div>
-          <h2>As a full-stack superhero, which projects would you consider your mortal enemies and which ones would be
-            your loyal sidekicks?</h2>
-          <label for="fullstackInput">Please type in your answer</label>
-          <input id="fullstackInput" type="text" name="fullstackInput">
-        </div>
-        <div class="button-container">
-          <button id="fullstackSubmit" type="submit" class="button-material" disabled>Get Suggestion</button>
-          <button id="fullstackReset" type="button" class="hidden">Reset answers</button>
-        </div>
+        </label><br>
       </div>
-    </form>
+      <div>
+        <h2>As a full-stack superhero, which projects would you consider your mortal enemies and which ones would be
+          your loyal sidekicks?</h2>
+        <label for="fullstackInput">Please type in your answer</label>
+        <input id="fullstackInput" type="text" name="fullstackInput">
+      </div>
+      <div class="button-container">
+        <button id="fullstackSubmit" type="submit" class="button-material" disabled>Get Suggestion</button>
+        <button id="fullstackReset" type="button" class="hidden">Reset answers</button>
+      </div>
+  </div>
+  </form>
   </div>
   <div id="error" class="hidden">
     <h3></h3>
