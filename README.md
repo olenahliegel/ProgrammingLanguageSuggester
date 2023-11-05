@@ -3,7 +3,7 @@
 #### By **Olena Shliegel**
 
 #### This is the MVP version of a Programming Language Suggester. Users receive recommendations about which programming language to learn based on their answers. The working version of the site can be accessed using the following link:  
-#### [Programming Language Suggester](https://olenashliegel.github.io/ProgrammingLanguageSuggester/)
+#### [Programming Language Suggester](https://olenahliegel.github.io/ProgrammingLanguageSuggester/)
 
 ## Technologies Used
 
