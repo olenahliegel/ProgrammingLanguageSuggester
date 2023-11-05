@@ -23,7 +23,7 @@ function recommendFrontendLanguage(currentExp, projectEnvision, spaSelection, fr
       frontEndInterests === "scripting")) {
     return "Java Script";
   } else if (currentExp === "frontEndBeginner") {
-    return "HTML&CSS";
+    return "HTML & CSS";
   } else return "Java Script";
 }
 
@@ -527,7 +527,7 @@ function resetFullStackForm() {
 //User interface logic for loading window even Listener
 window.addEventListener("load", function () {
 
-  const developmentFocusForm = document.getElementById("developmentFocus");
+  const developmentFocusForm = document.getElementById("developmentFocusMain");
   developmentFocusForm.addEventListener("click", handleUserChoice);
 
   developmentFocusForm.addEventListener("click", function () {

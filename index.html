@@ -9,26 +9,22 @@
 
 <body>
   <h1>Programming Language Suggester</h1>
-  <p class="developmentFocus"> Please select the area of programming that you are interested in</p>
+  <p class="developmentFocusClass"> Please select the area of programming that you are interested in</p>
   <div class="developmentFocusSelection">
-    <form id="developmentFocus">
-      <div class="radio-container">
-        <label class="radio-label">
-          <input type="radio" name="developmentFocus" value="frontEnd">
-          Front-End
-        </label>
-      </div>
-      <div class="radio-container">
-        <label>
-          <input type="radio" name="developmentFocus" value="backEnd">
-          Back-End
-        </label>
-      </div>
-      <div class="radio-container">
-        <label>
-          <input type="radio" name="developmentFocus" value="fullstack">
-          I like both equally
-        </label>
+    <form id="developmentFocusMain">
+      <div class="radio-group">
+        <div class="radio-container">
+          <input type="radio" id="frontEndRadioButton" name="developmentFocus" value="frontEnd">
+          <label for="frontEndRadioButton">Front-End</label>
+        </div>
+        <div class="radio-container">
+          <input type="radio" id="backEndRadioButton" name="developmentFocus" value="backEnd">
+          <label for="backEndRadioButton">Back-End</label>
+        </div>
+        <div class="radio-container">
+          <input type="radio" id="fullstackRadioButton" name="developmentFocus" value="fullstack">
+          <label for="fullstackRadioButton">I like both equally</label>
+        </div>
       </div>
     </form>
   </div>
