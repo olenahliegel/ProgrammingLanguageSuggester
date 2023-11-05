@@ -298,6 +298,12 @@ function outputForDynamicAnswerResult(answer) {
     return "you'd take home the 'Language Triathlon' medal, mastering multiple languages and frameworks";
 }
 
+//User Interface logic for setting BackgroundColor and Transition for element
+function settingBackGroundColor(elementName, color) {
+  document.querySelector(elementName).style.backgroundColor = color;
+  document.querySelector(elementName).style.transition = "background-color 2s";
+}
+
 //User Interface logic for main selection
 function handleUserChoice() {
   const userChoice = document.querySelector("input[name='developmentFocus']:checked").value;
@@ -306,14 +312,17 @@ function handleUserChoice() {
       document.getElementById("frontEnd").removeAttribute("class");
       document.getElementById("backEnd").setAttribute("class", "hidden");
       document.getElementById("fullstack").setAttribute("class", "hidden");
+      settingBackGroundColor("body", "#996AD6");
     } else if (userChoice === "backEnd") {
       document.getElementById("backEnd").removeAttribute("class");
       document.getElementById("frontEnd").setAttribute("class", "hidden");
       document.getElementById("fullstack").setAttribute("class", "hidden");
+      settingBackGroundColor("body", "#313186");
     } else if (userChoice === "fullstack") {
       document.getElementById("fullstack").removeAttribute("class");
       document.getElementById("frontEnd").setAttribute("class", "hidden");
       document.getElementById("backEnd").setAttribute("class", "hidden");
+      settingBackGroundColor("body", "#0B61A4");
     }
   }
 }
