@@ -1,5 +1,6 @@
 //Business logic of recommendation for FrontEnd language
 function recommendFrontendLanguage(currentExp, projectEnvision, spaSelection, frontEndInterests) {
+  //The result is count according an
   if (currentExp === "frontEndTS") {
     return "Angular";
   } else if (currentExp === "frontEndJS" &&
@@ -16,15 +17,15 @@ function recommendFrontendLanguage(currentExp, projectEnvision, spaSelection, fr
       spaSelection === "unknownSPA")) {
     return "HTML & CSS";
   } else if (currentExp === "frontEndHTML") {
-    return "Java Script";
+    return "JavaScript";
   } else if (currentExp === "frontEndBeginner" &&
     (projectEnvision === "interactiveWeb" ||
       spaSelection === "buildSPA" ||
       frontEndInterests === "scripting")) {
-    return "Java Script";
+    return "JavaScript";
   } else if (currentExp === "frontEndBeginner") {
     return "HTML & CSS";
-  } else return "Java Script";
+  } else return "JavaScript";
 }
 
 //Business logic of recommendation for BackEnd language
@@ -71,8 +72,8 @@ function recommendationBackEndLanguage(currentExp, projectTypes, microServices, 
     return "Python";
   else if (result >= 5 && result < 8)
     return "C#";
-  else (result >= 8)
-  return "Java";
+  else if (result >= 8)
+    return "Java";
 }
 
 //Business logic of recommendation for FullStack language
@@ -115,7 +116,7 @@ function recommendationFullstackLanguage(fullstackExperience, fullstackInterests
     result += 4;
 
   if (result <= 4)
-    return "Java Script";
+    return "JavaScript";
   else if (result >= 5 && result <= 8)
     return "Python";
   else if (result > 8 && result <= 12)
@@ -146,7 +147,7 @@ function outputForStaticAnswerResult(answer) {
   if (answer === "styling" ||
     answer === "scripting" ||
     answer === "stronglyTyped")
-    return "Your are interesting in:  "
+    return "Your are interested in:  "
 
   if (answer === "backEndBeginner" ||
     answer === "pascal" ||
@@ -280,9 +281,9 @@ function outputForDynamicAnswerResult(answer) {
     return "working with multiple languages and frameworks";
 
   if (answer === "codeJuggler")
-    return "you was born to juggle code like a pro:=)";
+    return "you were born to juggle code like a pro:=)";
   else if (answer === "onlyJoint")
-    return "you are ready to join the circus just yet";
+    return "you aren't ready to join the circus just yet";
   else if (answer === "multitaskerConfused")
     return "you are good at handling one thing at a time, let alone a whole stack";
   else if (answer === "proJuggler")
@@ -327,7 +328,7 @@ function handleUserChoice() {
   }
 }
 
-//User Interface logic for FrontEnd questionary form
+//User Interface logic for FrontEnd questionnaire form
 function handleFrontEndAnswers(event) {
   event.preventDefault();
 
@@ -365,7 +366,7 @@ function handleFrontEndAnswers(event) {
   document.getElementById("frontReset").removeAttribute("class");
 }
 
-//User Interface logic for Submit button in FrontEnd questionary form
+//User Interface logic for Submit button in FrontEnd questionnaire form
 function updateFrontSubmitButtonStatus() {
   const currentExp = document.querySelector("input[name='frontEndExperience']:checked").value;
   const projectEnvision = document.getElementById("frontEndProjects").value;
@@ -381,7 +382,7 @@ function updateFrontSubmitButtonStatus() {
   }
 }
 
-//User Interface logic for resetting entering results in FrontEnd questionary form
+//User Interface logic for resetting entering results in FrontEnd questionnaire form
 function resetFrontForm() {
   document.getElementById("frontSubmit").setAttribute("disabled", "true");
   document.querySelector("input[name='frontEndExperience'][value='frontEndBeginner']").checked = true;
@@ -393,7 +394,7 @@ function resetFrontForm() {
   document.querySelector("div#error").setAttribute("class", "hidden");
 }
 
-//User Interface logic for BackEnd questionary form
+//User Interface logic for BackEnd questionnaire form
 function handleBackEndAnswers(event) {
   event.preventDefault();
 
@@ -430,7 +431,7 @@ function handleBackEndAnswers(event) {
   document.getElementById("backReset").removeAttribute("class");
 }
 
-//User Interface logic for Submit button in BackEnd questionary form
+//User Interface logic for Submit button in BackEnd questionnaire form
 function updateBackSubmitButtonStatus() {
   const currentExp = document.querySelector("input[name='backEndExperience']:checked").value;
   const projectTypes = document.getElementById("projectTypes").value;
@@ -446,7 +447,7 @@ function updateBackSubmitButtonStatus() {
   }
 }
 
-//User Interface logic for resetting entering results in BackEnd questionary form
+//User Interface logic for resetting entering results in BackEnd questionnaire form
 function resetBackForm() {
   document.getElementById("backSubmit").setAttribute("disabled", "true");
   document.querySelector("input[name='backEndExperience'][value='backEndBeginner']").checked = true;
@@ -458,7 +459,7 @@ function resetBackForm() {
   document.querySelector("div#error").setAttribute("class", "hidden");
 }
 
-//User Interface logic for FullStack questionary form
+//User Interface logic for FullStack questionnaire form
 function handleFullstackAnswers(event) {
   event.preventDefault();
 
@@ -496,7 +497,7 @@ function handleFullstackAnswers(event) {
   document.getElementById("fullstackReset").removeAttribute("class");
 }
 
-//User Interface logic for Submit button in FullStack questionary form
+//User Interface logic for Submit button in FullStack questionnaire form
 function updateFullstackSubmitButtonStatus() {
   const currentExp = document.querySelector("input[name='fullstackExperience']:checked").value;
   const fullstackInterests = document.getElementById("fullstackInterests").value;
@@ -512,7 +513,7 @@ function updateFullstackSubmitButtonStatus() {
   }
 }
 
-//User Interface logic for resetting entering results in FullStack questionary form
+//User Interface logic for resetting entering results in FullStack questionnaire form
 function resetFullStackForm() {
   document.getElementById("fullstackSubmit").setAttribute("disabled", "true");
   document.querySelector("input[name='fullstackExperience'][value='fullstackBeginner']").checked = true;
