@@ -147,7 +147,7 @@ function outputForStaticAnswerResult(answer) {
   if (answer === "styling" ||
     answer === "scripting" ||
     answer === "stronglyTyped")
-    return "Your are interested in:  "
+    return "Your are interested in:  ";
 
   if (answer === "backEndBeginner" ||
     answer === "pascal" ||
@@ -387,7 +387,7 @@ function resetFrontForm() {
   document.getElementById("frontSubmit").setAttribute("disabled", "true");
   document.querySelector("input[name='frontEndExperience'][value='frontEndBeginner']").checked = true;
   document.getElementById("frontEndProjects").value = "unknown";
-  document.getElementById("frontEndSPA").value = "unknownSPA"
+  document.getElementById("frontEndSPA").value = "unknownSPA";
   document.querySelector("input[name='frontEndInterests'][value='styling']").checked = true;
   document.querySelector("input#frontEndInput").value = "";
   document.querySelector("div#result").setAttribute("class", "hidden");
@@ -452,7 +452,7 @@ function resetBackForm() {
   document.getElementById("backSubmit").setAttribute("disabled", "true");
   document.querySelector("input[name='backEndExperience'][value='backEndBeginner']").checked = true;
   document.getElementById("projectTypes").value = "unsure";
-  document.getElementById("microServ").value = "pieces"
+  document.getElementById("microServ").value = "pieces";
   document.querySelector("input[name='backEndInterests'][value='dataDeep']").checked = true;
   document.querySelector("input#backEndInput").value = "";
   document.querySelector("div#result").setAttribute("class", "hidden");
@@ -518,7 +518,7 @@ function resetFullStackForm() {
   document.getElementById("fullstackSubmit").setAttribute("disabled", "true");
   document.querySelector("input[name='fullstackExperience'][value='fullstackBeginner']").checked = true;
   document.getElementById("fullstackInterests").value = "endToEnd";
-  document.getElementById("multitasker").value = "codeJuggler"
+  document.getElementById("multitasker").value = "codeJuggler";
   document.querySelector("input[name='fullstackEvents'][value='codeRelay']").checked = true;
   document.querySelector("input#fullstackInput").value = "";
   document.querySelector("div#result").setAttribute("class", "hidden");
@@ -567,4 +567,3 @@ window.addEventListener("load", function () {
   const fullstackReset = document.getElementById("fullstackReset");
   fullstackReset.addEventListener("click", resetFullStackForm);
 });
-
